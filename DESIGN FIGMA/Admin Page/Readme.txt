@@ -1,0 +1,1 @@
+Ukoliko je uposlenik odredjene bolnice/ambulante ulogovan imat ce mogucnost da pregleda sve Bolnice i sva zakazana testiranja te vakcinisanja.

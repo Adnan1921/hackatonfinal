@@ -1,0 +1,1 @@
+U Zakazi termin user ce imati mogucnost da unese sve potrebne informacije da bi mogao zakazati termin u bolnici/ambulanti. Termine koje je korisnik zakazao moze pregledati na page-u "Zakazani Termini" te na istoj mogu tu otkazati.

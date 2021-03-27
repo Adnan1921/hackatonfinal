@@ -1,0 +1,1 @@
+Kada se user login-a imat ce pristup Main page na kojem ce imati mogucnost da trazi i pristupi informacijama kolika je guzva ispred odredjenih Bolnica-Covid Ambulanata. Ukoliko pritisnu na odredjenu bolnicu na side baru ce dobiti malo vise informacija o istoj.
