@@ -94,7 +94,7 @@
 		              border: none;
 		            "
 		          >
-		            <i class="fas fa-chart-bar"></i>Trenutno stanje
+		            <i class="fas fa-chart-bar"></i><a href="http://localhost:3000/bolnices" style="color:#fff;">Trenutno stanje</span></a>
 		          </button>
           
 		        </div>
@@ -104,8 +104,8 @@
 		        class="nav-item nav-link"
 		        href="#"
 		        >Zdravo, <br />
-									<b><%= current_user.ime%></b></i
-		      ></a>
+									<b><%= current_user.ime%></b></i></a>
+									<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 		       <a
 		        style="float: right; color: #788b9b; font-family: poppins"
 		        class="nav-item nav-link"
