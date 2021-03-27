@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  naziv_ustanove: MyString
+  broj: MyString
+  lokacija: MyString
+  vrijeme_cekanja: MyString
+  radno_vrijeme: MyString
+  odijeljenje: MyString
+
+two:
+  naziv_ustanove: MyString
+  broj: MyString
+  lokacija: MyString
+  vrijeme_cekanja: MyString
+  radno_vrijeme: MyString
+  odijeljenje: MyString

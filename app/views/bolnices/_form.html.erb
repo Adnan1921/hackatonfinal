@@ -1,0 +1,50 @@
+<%= form_with(model: bolnice, local: true) do |form| %>
+  <% if bolnice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bolnice.errors.count, "error") %> prohibited this bolnice from being saved:</h2>
+
+      <ul>
+        <% bolnice.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :naziv_ustanove %>
+    <%= form.text_field :naziv_ustanove %>
+  </div>
+
+  <div class="field">
+    <%= form.label :broj %>
+    <%= form.text_field :broj %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lokacija %>
+    <%= form.text_field :lokacija %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vrijeme_cekanja %>
+    <%= form.text_field :vrijeme_cekanja %>
+  </div>
+
+  <div class="field">
+    <%= form.label :radno_vrijeme %>
+    <%= form.text_field :radno_vrijeme %>
+  </div>
+
+  <div class="field">
+    <%= form.label :odijeljenje %>
+    <%= form.text_field :odijeljenje %>
+  </div>
+	
+	<%= form.file_field :avatar %>
+	
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

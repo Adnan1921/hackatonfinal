@@ -1,0 +1,126 @@
+
+<%= render 'shared/navbar' %>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+			.btn{
+				font-family: poppins;
+				 border-radius: 6px;
+				 background-color: #ff3533;
+				 color: white;
+				 border: none;
+				 height: 40px;
+			}
+      html {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .float-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .float-child1 {
+        width: 55%;
+        height: 100%;
+        float: left;
+      }
+      .float-child2 {
+        width: 45%;
+        height: 100%;
+        float: left;
+      }
+      .card-body {
+        padding: 130px 60px 60px;
+      }
+      i {
+        display: inline-block;
+        margin-right: 1em;
+      }
+			
+      </style>
+			<head>
+<%= form_with(model: vakcinisanje, local: true) do |form| %>
+  <% if vakcinisanje.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vakcinisanje.errors.count, "error") %> prohibited this vakcinisanje from being saved:</h2>
+
+      <ul>
+        <% vakcinisanje.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="float-container">
+       <div class="float-child1">
+         <form action="">
+           <div class="container">
+             <div class="card-body">
+               <h1 style="color: #3d4c71; font-family: Poppins;">
+                Zakazivanje termina
+               </h1>
+
+  <div class="field">
+    <%= form.label :ime %>
+    <%= form.text_field :ime,:class=>'form-control', :value =>  current_user.ime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :jmbg %>
+    <%= form.text_field :jmbg,:class=>'form-control',  :value =>  current_user.jmbg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :knjizica %>
+    <%= form.text_field :knjizica,:class=>'form-control',  :value =>  current_user.broj %>
+  </div>
+
+  <div class="field">
+    <%= form.label :datum %>
+    <%= form.datetime_select :datum %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Zakaži", class: 'btn btn-block login-btn mb-4'%>
+  </div>
+<% end %>
+							</form>
+							            </div>
+							          </div>
+							        </form>
+							      </div>
+      
+							      <div class="float-child2" style="margin-top:5%">
+							        <iframe src="https://www.google.com/maps/d/embed?mid=1wIM7W7-KgvdC2PwsgIxsfM8aR5UVtP8t&hl=bs" width="640" height="450"></iframe>
+         
+							        </div>
+							      </div>
+										
+							    </div></div>
+							  </body>
+							</html>
+							

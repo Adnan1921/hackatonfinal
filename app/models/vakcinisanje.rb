@@ -1,0 +1,2 @@
+class Vakcinisanje < ApplicationRecord
+end

@@ -1,0 +1,3 @@
+class Mapatestiranja < ApplicationRecord
+  
+end

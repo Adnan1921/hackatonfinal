@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ime: MyString
+  jmbg: MyString
+  knjizica: MyString
+  datum: 2021-03-26 15:19:55
+
+two:
+  ime: MyString
+  jmbg: MyString
+  knjizica: MyString
+  datum: 2021-03-26 15:19:55

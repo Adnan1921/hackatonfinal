@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ime:</strong>
+  <%= @testiranje.ime %>
+</p>
+
+<p>
+  <strong>Jmbg:</strong>
+  <%= @testiranje.jmbg %>
+</p>
+
+<p>
+  <strong>Knjizica:</strong>
+  <%= @testiranje.knjizica %>
+</p>
+
+<p>
+  <strong>Datum:</strong>
+  <%= @testiranje.datum %>
+</p>
+
+<%= link_to 'Edit', edit_testiranje_path(@testiranje) %> |
+<%= link_to 'Back', testiranjes_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Naziv ustanove:</strong>
+  <%= @bolnice.naziv_ustanove %>
+</p>
+
+<p>
+  <strong>Broj:</strong>
+  <%= @bolnice.broj %>
+</p>
+
+<p>
+  <strong>Lokacija:</strong>
+  <%= @bolnice.lokacija %>
+</p>
+
+<p>
+  <strong>Vrijeme cekanja:</strong>
+  <%= @bolnice.vrijeme_cekanja %>
+</p>
+
+<p>
+  <strong>Radno vrijeme:</strong>
+  <%= @bolnice.radno_vrijeme %>
+</p>
+
+<p>
+  <strong>Odijeljenje:</strong>
+  <%= @bolnice.odijeljenje %>
+</p>
+
+  <strong>Trentuno stanje:</strong>
+<%= image_tag @bolnice.avatar.variant(resize_to_limit: [200, 200]) %>
+	
+</p>
+
+<%= link_to 'Edit', edit_bolnice_path(@bolnice) %> |
+<%= link_to 'Back', bolnices_path %>

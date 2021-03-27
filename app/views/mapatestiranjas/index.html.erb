@@ -1,0 +1,222 @@
+<%= render 'shared/navbar' %>
+
+<p id="notice"><%= notice %></p>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+		<html>
+		                 <head>
+		                   <!-- <title>Add Map</title> -->
+               
+		                   <style type="text/css">
+		                     /* Set the size of the div element that contains the map */
+		                     #map {
+		                       height: 400px;
+		                       /* The height is 400 pixels */
+		                       width: 100%;
+		                       /* The width is the width of the web page */
+		                     }
+		                   </style>
+		                   <script>
+		                     var map;
+		                var InforObj = [];
+		                var centerCords = {
+		                    lat: 43.8501868,
+		                    lng: 18.3553745
+		                };
+		                var markersOnMap = [
+		                    {
+		                        placeName: "Univerzitetski klinički centar Sarajevo",
+		                        LatLng: [{
+		                            lat: 43.8691644,
+		                            lng: 18.4134981
+		                        }]
+		                    },
+		                    {
+		                        placeName: "Drive in punkt",
+		                        LatLng: [{
+		                            lat: 43.854836,
+		                            lng: 18.4063918
+		                        }]
+		                    },
+		                    {
+		                        placeName: "Omer Maslić",
+		                        LatLng: [{
+		                            lat: 43.8507675,
+		                            lng: 18.3772743
+		                        }]
+		                    },
+		                    {
+		                        placeName: "Dom zdravlja Saraj Polje",
+		                        LatLng: [{
+		                            lat: 43.837838,
+		                            lng: 18.3416427
+		                        }]
+		                    },
+		                    {
+		                        placeName: "Sarajevska bb, Gradačac 76250",
+		                        LatLng: [{
+		                            lat: 44.9027753,
+		                            lng: 18.4323512
+		                        }]
+		                    },
+		                    // {
+// 		                        placeName: "Velika Bukovica bb, Doboj 74000",
+// 		                        LatLng: [{
+// 		                            lat: 44.7746625,
+// 		                            lng: 18.0410461
+// 		                        }]
+// 		                    },
+// 		                    {
+// 		                        placeName: "Branilaca grada, Gračanica 75320",
+// 		                        LatLng: [{
+// 		                            lat: 44.686980,
+// 		                            lng: 18.299696
+// 		                        }]
+// 		                    },
+// 		                    {
+// 		                        placeName: "M4 Gračanica 75320",
+// 		                        LatLng: [{
+// 		                            lat: 44.687228,
+// 		                            lng: 18.299659
+// 		                        }]
+// 		                    },
+// 		                    {
+// 		                        placeName: "Magistralni put do broja 189, Živinice 75270",
+// 		                        LatLng: [{
+// 		                            lat: 44.44333,
+// 		                            lng: 18.65760
+// 		                        }]
+// 		                    },
+// 		                    {
+// 		                        placeName: "Krajiška bb, Teslić 74270",
+// 		                        LatLng: [{
+// 		                            lat: 44.61820,
+// 		                            lng: 17.85311
+// 		                        }]
+// 		                    },
+// 		                    {
+// 		                        placeName: "Uvac 6, 73290",
+// 		                        LatLng: [{
+// 		                            lat: 43.60149,
+// 		                            lng: 19.48153
+// 		                        }]
+// 		                    },
+// 		                    {
+// 		                        placeName: "Armije BiH 5, Banovići 75290",
+// 		                        LatLng: [{
+// 		                            lat: 44.4130904,
+// 		                            lng: 18.5346719
+// 		                        }]
+// 		                    },
+// 		                    {
+// 		                        placeName: "Safeta Hadžića, Sarajevo 71000",
+// 		                        LatLng: [{
+// 		                            lat: 43.84103,
+// 		                            lng: 18.35335
+// 		                        }]
+// 		                    },
+// 		                    {
+// 		                        placeName: "Kaćuni bb, 72260",
+// 		                        LatLng: [{
+// 		                            lat: 44.06780,
+// 		                            lng: 17.93844
+// 		                        }]
+// 		                    },
+		                ];
+        
+		                window.onload = function () {
+		                    initMap();
+		                };
+        
+		                function addMarker() {
+		                    for (var i = 0; i < markersOnMap.length; i++) {
+		                        var contentString = '<div id="content"><h6 style="font-size:16px; padding-top: 10px">' + markersOnMap[i].placeName +
+		                            '</h6></div>';
+        
+		                        const marker = new google.maps.Marker({
+		                            position: markersOnMap[i].LatLng[0],
+															
+		                            map: map
+		                        });
+        
+		                        const infowindow = new google.maps.InfoWindow({
+		                            content: contentString,
+		                            maxWidth: 200
+		                        });
+        
+		                        marker.addListener('click', function () {
+		                            closeOtherInfo();
+		                            infowindow.open(marker.get('map'), marker);
+		                            InforObj[0] = infowindow;
+		                        });
+		                        // marker.addListener('mouseover', function () {
+		                        //     closeOtherInfo();
+		                        //     infowindow.open(marker.get('map'), marker);
+		                        //     InforObj[0] = infowindow;
+		                        // });
+		                        // marker.addListener('mouseout', function () {
+		                        //     closeOtherInfo();
+		                        //     infowindow.close();
+		                        //     InforObj[0] = infowindow;
+		                        // });
+		                    }
+		                }
+        
+		                function closeOtherInfo() {
+		                    if (InforObj.length > 0) {
+		                        /* detach the info-window from the marker ... undocumented in the API docs */
+		                        InforObj[0].set("marker", null);
+		                        /* and close it */
+		                        InforObj[0].close();
+		                        /* blank the array */
+		                        InforObj.length = 0;
+		                    }
+		                }
+        
+		                function initMap() {
+		                    map = new google.maps.Map(document.getElementById('map'), {
+		                        zoom: 10.5,
+		                        center: centerCords
+		                    });
+		                    addMarker();
+		                }
+										
+		                   </script>
+		                 </head>
+		                 <body>
+		                   <!--The div element for the map -->
+		                   <div id="map"></div>
+               
+		                   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+		                   <script
+		                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx8PjYMu4ICCBjEKnbGTnELK_F4fLEcWw&callback=initMap&libraries=&v=weekly"
+		                     async
+		                   ></script>
+		                 </body>
+		               </html>
+
+		
+		
+		
+    <% @mapatestiranjas.each do |mapatestiranja| %>
+      <!-- <tr>
+        <td><%= link_to 'Show', mapatestiranja %></td>
+        <td><%= link_to 'Edit', edit_mapatestiranja_path(mapatestiranja) %></td>
+        <td><%= link_to 'Destroy', mapatestiranja, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr> -->
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<!-- <%= link_to 'New Mapatestiranja', new_mapatestiranja_path %> -->

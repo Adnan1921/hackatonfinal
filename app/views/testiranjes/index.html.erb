@@ -1,0 +1,45 @@
+<%= render 'shared/navbar' %>
+
+<p id="notice"><%= notice %></p>
+
+
+    <div class="container" style="padding-top: 5%;">
+
+     <h1 style=" color: #3D4C71; font-family: poppins;text-align: left;">Zakazani termini</h1>
+
+  <table class="table">
+  <thead>
+    <tr style="color: #A9B5C0;">
+      <th scope="col">Mjesto testiranja</th>
+      <th scope="col">Adresa</th>
+      <th scope="col">Datum testiranja</th>
+      <th scope="col">Vrijeme testiranja</th>
+      <th scope="col">Kontakt</th>
+      <th scope="col">Otkazi termin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @testiranjes.each do |testiranje| %>
+		
+    <tr>
+      <th  style="color: #ff3533;"  scope="row"><i class="fas fa-map-marker-alt"></i></th>
+      <td><%= testiranje.ime %></td>
+      <td><%= testiranje.jmbg %></td>
+      <td><%= testiranje.knjizica %></td>
+      <td><%= testiranje.datum %></td>
+      <td><button class="myBtn" style="  border-radius: 6px;
+              background-color: #ff3533;
+              color: white;
+              height: 35px;
+              width: 100px;
+              border: none;"><i class="fas fa-times"></i>Otkaži</button></td>
+    <% end %>
+
+
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body>
+		<style>
+		.dropdown {
+		 padding: 5px;
+		  position: relative;
+		  display: inline-block;
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f9f9f9;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  padding: 12px 16px;
+		  z-index: 1;
+		}
+
+		.dropdown:hover .dropdown-content {
+		  display: block;
+		}
+		    </style>
+		    <title>Document</title>
+		  </head>
+		  <body>
+		    <nav
+		      class="navbar navbar-expand-lg navbar-light"
+		      style="border: 1px solid #f1f3f6"
+		    >
+		      <a
+		        style="border-right: 1px solid #f1f3f6"
+		        class="nav-item nav-link active"
+		        href="#"
+		      >
+		       <%= image_tag("logo.png", :style => 'width:110px; height:30px') %></a>
+		      <button
+		        class="navbar-toggler"
+		        type="button"
+		        data-toggle="collapse"
+		        data-target="#navbarNavAltMarkup"
+		        aria-controls="navbarNavAltMarkup"
+		        aria-expanded="false"
+		        aria-label="Toggle navigation"
+		      >
+		        <span class="navbar-toggler-icon"></span>
+		      </button>
+		      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		        <div class="navbar-nav">
+		          <div class="dropdown">
+		  <span style="color: #788b9b; font-family: poppins"><a href="http://localhost:3000/testiranjes/new" style="color:#788b9b;"><i class="fas fa-vial"></i>Testiranje</span></a>
+		  <div class="dropdown-content">
+		    <a href="http://localhost:3000/testiranjes" style="text-decoration: none; color:#788b9b;">Zakazani termini</a>
+		  </div>
+		</div>
+		<div class="dropdown">
+		  <span style="color: #788b9b; font-family: poppins; padding-left:15px;"><a href="http://localhost:3000/vakcinisanjes/new" style="color:#788b9b;"><i class="fas fa-syringe"></i>Vakcinacija</span></a>
+		  <div class="dropdown-content">
+		    <a href="http://localhost:3000/vakcinisanjes" style="text-decoration: none; color:#788b9b;">Zakazani termini</a>
+		  </div>
+		</div>
+      
+
+		          <button
+		            class="navbar-brand"
+		            style="margin-left: 20px;
+		              font-family: poppins;
+		              border-radius: 6px;
+		              background-color: #ff3533;
+		              color: white;
+		              height: 46px;
+		              border: none;
+		            "
+		          >
+		            <i class="fas fa-chart-bar"></i>Trenutno stanje
+		          </button>
+          
+		        </div>
+		      </div>
+		      <a
+		        style="float: right; color: #788b9b; font-family: poppins; text-align: right;"
+		        class="nav-item nav-link"
+		        href="#"
+		        >Zdravo, <br />
+									<b><%= current_user.ime%></b></i
+		      ></a>
+		       <a
+		        style="float: right; color: #788b9b; font-family: poppins"
+		        class="nav-item nav-link"
+		        href="#"
+		        ><i class="fas fa-sign-out-alt"></i></a>
+		    </nav>
+    </div>
+  </body>
+</html>

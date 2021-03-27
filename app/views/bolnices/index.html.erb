@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bolnices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Naziv ustanove</th>
+      <th>Broj</th>
+      <th>Lokacija</th>
+      <th>Vrijeme cekanja</th>
+      <th>Radno vrijeme</th>
+      <th>Odijeljenje</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bolnices.each do |bolnice| %>
+      <tr>
+        <td><%= bolnice.naziv_ustanove %></td>
+        <td><%= bolnice.broj %></td>
+        <td><%= bolnice.lokacija %></td>
+        <td><%= bolnice.vrijeme_cekanja %></td>
+        <td><%= bolnice.radno_vrijeme %></td>
+        <td><%= bolnice.odijeljenje %></td>
+<!-- <%= image_tag bolnice.avatar %> -->
+				
+        <td><%= link_to 'Show', bolnice %></td>
+        <td><%= link_to 'Edit', edit_bolnice_path(bolnice) %></td>
+        <td><%= link_to 'Destroy', bolnice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bolnice', new_bolnice_path %>

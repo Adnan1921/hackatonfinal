@@ -1,0 +1,2 @@
+module BolnicesHelper
+end
